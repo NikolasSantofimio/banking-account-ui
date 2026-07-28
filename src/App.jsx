@@ -2,6 +2,7 @@ import { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import AccountForm from './components/AccountForm';
 import BalanceLookup from './components/BalanceLookup';
+import TransactionForm from './components/TransactionForm';
 import './index.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <button onClick={handleLogout}>Logout</button>
       </header>
       <main>
+        <AccountForm/>
         <AccountForm />
         <BalanceLookup />
       </main>
