@@ -32,13 +32,6 @@ cd banking-account-ui
 ```bash
 npm install
 ```
-
-En Windows, si PowerShell bloquea la ejecución de `npm` por política de ejecución de scripts, usa `npm.cmd` en su lugar, o habilita scripts locales con:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
-```
-
 ## 3. Configurar la URL del backend
 
 Por defecto, el cliente apunta a `http://localhost:8080` (configurado en `src/api/client.js`). Si tu backend corre en otro host/puerto, edita `API_BASE_URL` en ese archivo.
@@ -96,5 +89,4 @@ src/
 ## Notas
 
 - El JWT se guarda en `localStorage` bajo la clave `jwt_token` y se inyecta automáticamente en cada request vía interceptor de Axios.
-- El diseño visual sigue una identidad tipo "consola de operaciones bancarias" (paleta navy/azul acero, tipografía monoespaciada para montos e IDs) — ver `DECISIONES.md` del repositorio del backend para el detalle del sistema de diseño.
-- El repositorio del backend (`banking-account-service`) vive por separado; este proyecto no funciona de forma aislada, requiere la API corriendo.
+- El repositorio del backend (https://github.com/NikolasSantofimio/banking-account-service) vive por separado; este proyecto no funciona de forma aislada, requiere la API corriendo.
