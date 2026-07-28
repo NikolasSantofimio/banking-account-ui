@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import AccountForm from './components/AccountForm';
-import BalanceLookup from './components/BalanceLookup';
 import TransactionForm from './components/TransactionForm';
+import BalanceLookup from './components/BalanceLookup';
 import './index.css';
 
 function App() {
@@ -21,13 +21,16 @@ function App() {
 
   return (
     <div className="app">
-      <header>
-        <h1>Banking Account Service</h1>
-        <button onClick={handleLogout}>Logout</button>
+      <header className="app-header">
+        <div>
+          <p className="brand-eyebrow">Banking Account Service</p>
+          <h1>Operations Console</h1>
+        </div>
+        <button onClick={handleLogout}>Sign out</button>
       </header>
       <main>
-        <AccountForm/>
         <AccountForm />
+        <TransactionForm />
         <BalanceLookup />
       </main>
     </div>

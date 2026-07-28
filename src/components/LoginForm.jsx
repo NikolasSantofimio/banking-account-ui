@@ -14,27 +14,38 @@ export default function LoginForm({ onLoginSuccess }) {
       localStorage.setItem('jwt_token', response.data.token);
       onLoginSuccess();
     } catch (err) {
-      setError('Invalid credentials');
+      setError('Invalid credentials. Check your username and password.');
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
-      <h2>Login</h2>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Sign in</button>
-      {error && <p className="error">{error}</p>}
-    </form>
+    <div className="login-screen">
+      <div className="login-card">
+        <p className="login-eyebrow">Banking Account Service</p>
+        <h2>Sign in to continue</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="field">
+            <label htmlFor="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <button type="submit">Sign in</button>
+        </form>
+        {error && <p className="form-error">{error}</p>}
+      </div>
+    </div>
   );
 }
